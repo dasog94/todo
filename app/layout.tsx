@@ -1,10 +1,15 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'todo',
-  description: 'i am working',
-}
+import type { Metadata } from 'next'
+import React from "react"
+import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry"
+import {AppBar, Box, Toolbar, Typography} from "@mui/material"
+import CssBaseline from "@mui/material/CssBaseline"
+
+// export const metadata: Metadata = {
+//   title: 'todo',
+//   description: 'i am working',
+// }
 
 export default function RootLayout({
   children,
@@ -13,7 +18,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ThemeRegistry>
+          <CssBaseline />
+          <Box>
+            <Typography component="h1" variant="h5">
+              Todo
+            </Typography>
+            <Box>
+              {children}
+            </Box>
+          </Box>
+        </ThemeRegistry>
+      </body>
     </html>
   )
 }
