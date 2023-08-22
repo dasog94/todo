@@ -3,7 +3,7 @@
 import type { Metadata } from 'next'
 import React from "react"
 import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry"
-import {AppBar, Box, Toolbar, Typography} from "@mui/material"
+import {AppBar, Box, Container, Toolbar, Typography} from "@mui/material"
 import CssBaseline from "@mui/material/CssBaseline"
 
 // export const metadata: Metadata = {
@@ -21,14 +21,14 @@ export default function RootLayout({
       <body>
         <ThemeRegistry>
           <CssBaseline />
-          <Box>
+          <Container component="main">
             <Typography component="h1" variant="h5">
               Todo
             </Typography>
             <Box>
               {children}
             </Box>
-          </Box>
+          </Container>
         </ThemeRegistry>
       </body>
     </html>
